@@ -1,17 +1,17 @@
 /* eslint-disable prettier/prettier */
 import { IsString, IsNotEmpty, IsNumber, IsPositive, IsBoolean } from "class-validator";
-// import { PartialType, ApiProperty } from "@nestjs/swagger";
+import { PartialType, ApiProperty } from "@nestjs/swagger";
 
 export class CreateTaskDto {
     @IsString()
     @IsNotEmpty()
-    // @ApiProperty()
+    @ApiProperty()
     readonly tittle: string;
 
     @IsBoolean()
     @IsNotEmpty()
-    // @ApiProperty()
+    @ApiProperty()
     readonly completed: boolean;
 }
 
-// export class UpdateItemDto extends PartialType(CreateItemDto){}
+export class UpdateTaskDto extends PartialType(CreateTaskDto){}
