@@ -19,6 +19,7 @@ export class TasksController {
 
     @Post()
     createCategory(@Body() payload: CreateTaskDto) {
+        console.log(payload);
         return this.tasksService.create(payload);
     }
 
@@ -29,6 +30,6 @@ export class TasksController {
 
     @Delete(':taskId')
     deleteCategory(@Param('taskId', ParseIntPipe) taskId: number){
-        this.tasksService.delete(taskId);
+        return this.tasksService.delete(taskId);
     }
 }
