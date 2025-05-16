@@ -8,7 +8,6 @@ export class TasksController {
 
     @Get()
     getCategories() {
-        console.log('tasks');
         return this.tasksService.findAll();
     }
 
@@ -19,7 +18,6 @@ export class TasksController {
 
     @Post()
     createCategory(@Body() payload: CreateTaskDto) {
-        console.log(payload);
         return this.tasksService.create(payload);
     }
 
