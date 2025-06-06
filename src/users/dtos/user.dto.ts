@@ -17,6 +17,11 @@ export class CreateUserDto {
     @IsNotEmpty()
     @ApiProperty()
     readonly doc: string;
+
+    @IsString()
+    // @IsNotEmpty()
+    @ApiProperty()
+    readonly texto: string;
 }
 
-export class UpdateTaskDto extends PartialType(CreateUserDto){}
+export class UpdateUserDto extends PartialType(CreateUserDto){}

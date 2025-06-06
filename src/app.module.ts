@@ -21,10 +21,18 @@ import config from './config';
         POSTGRES_PASSWORD: Joi.string().required(),
         POSTGRES_PORT: Joi.number().required(),
         POSTGRES_HOST: Joi.string().required(),
+        // POSTGRES_NAME_CONNECTION: Joi.string().required(),
+        MYSQL_DATABASE: Joi.string().required(),
+        MYSQL_USER: Joi.string().required(),
+        MYSQL_ROOT_PASSWORD: Joi.string().required(),
+        MYSQL_PORT: Joi.number().required(),
+        MYSQL_HOST: Joi.string().required(),
+        // MYSQL_NAME_CONNECTION: Joi.string().required(),
       })
     }),
     DatabaseModule,
     TasksModule,
+    // TasksModule.register([process.env.POSTGRES_NAME_CONNECTION, process.env.MYSQL_NAME_CONNECTION]),
     UsersModule
   ],
   controllers: [AppController],
